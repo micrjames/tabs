@@ -10,12 +10,9 @@ class Tabs {
 		   const _this = this;
 		   const tab = new Tab("tabs-hdr-btn-group-btn", "btn", function() {
 			   for(const tab of _this.#tabs) {
-				  /*
 				   if(tab == this)
 				       tab.classList.add("enabled");
 				   else tab.classList.remove("enabled");
-				   */
-				  tab.classList.toggle("enabled");
 			   }
 		   });
 		   tab.text = properties[tabIndex-1].text;
