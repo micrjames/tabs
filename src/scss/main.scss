@@ -1,18 +1,57 @@
-@import 'utils/config', 'utils/utils', 'utils/res-mq';
+@import 'utils/config', 'utils/utils', 'utils/res-mq', 'utils/button';
 
-main{
-   width: 100vw;
-   height: 100vh;
-   #container {
-	   width: 75%;
-	   height: 90%;
-	   background-color: lightgrey;
+$primary-color: #663399;
+$secondary-color: #B48311;
+body {
+   background-color: $primary-color;
+   main{
+	  width: 100vw;
+	  height: 100vh;
+	  #tabs {
+		  width: 75%;
+		  height: 90%;
+		  background-color: lightgrey;
 
-	   position: absolute;
-	   @extend %center-object;
+		  position: absolute;
+		  @extend %center-object;
+		  @include box-shadow(10px, 5px, 15px, 5px, rgb(0 0 0 / 0.5), false);
 
-	   @include md {
-		  width: 50%;
-	   }
+		  @include md {
+			 width: 50%;
+		  }
+		  &-hdr {
+			  &-btn-group {
+				 display: grid;                                                                              
+				 grid-template-columns: repeat(4, 25%);
+				 .btn {
+					 border-radius: 0;
+					 background-color: lighten($primary-color, 10%);
+				 }
+				 &-1 {
+					 grid-column: 1 / 3;
+					 @include button(1.5rem, 0.9rem 1.2rem, 0);
+					 border-color: white;
+					 border-width: 1px;
+				 }
+				 &-2 {
+				    grid-column: 3 / -1;
+				    @include button(1.5rem, 0.9rem 1.2rem, 0);
+				    border-color: white;
+				    border-width: 1px;
+				 }
+			 }
+		 }
+		 #tab-1-content {
+			  background-color: lighten($primary-color, 25%);
+			  width: 100%;
+			  height: 95%; 
+		 }
+		 #tab2-content {
+			  background-color: $primary-color;
+		 }
+		 .hidden {
+			 display: none;
+		 }
+	  }
    }
 }
