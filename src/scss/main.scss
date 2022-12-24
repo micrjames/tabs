@@ -1,0 +1,18 @@
+@import 'utils/config', 'utils/utils', 'utils/res-mq';
+
+main{
+   width: 100vw;
+   height: 100vh;
+   #container {
+	   width: 75%;
+	   height: 90%;
+	   background-color: lightgrey;
+
+	   position: absolute;
+	   @extend %center-object;
+
+	   @include md {
+		  width: 50%;
+	   }
+   }
+}
