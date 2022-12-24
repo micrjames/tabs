@@ -20,18 +20,15 @@ body {
 		  }
 		  &-hdr {
 			@include tabs($primary-color); 
-		 }
-		 #tab-1-content {
-			  background-color: lighten($primary-color, 25%);
-			  width: 100%;
-			  height: 95%; 
-		 }
-		 #tab2-content {
-			  background-color: $primary-color;
-		 }
-		 .hidden {
+		  }
+		  &-body {
+			background-color: lighten($primary-color, 25%);
+			width: 100%;
+			height: 92%;
+		  }
+		  .hidden {
 			 display: none;
-		 }
+		  }
 	  }
    }
 }

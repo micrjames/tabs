@@ -30,10 +30,10 @@ body #main #tabs {
 }
 body #main #tabs-hdr #tabs-hdr-btn-group .btn {
   border-radius: 0;
-  background-color: #8040bf;
+  background-color: #a679d2;
 }
 body #main #tabs-hdr #tabs-hdr-btn-group .btn:disabled {
-  background-color: #a679d2;
+  background-color: #8040bf;
   cursor: default;
 }
 body #main #tabs-hdr #tabs-hdr-btn-group-btn {
@@ -48,15 +48,13 @@ body #main #tabs-hdr #tabs-hdr-btn-group-btn {
   border-radius: 5px;
   border: none;
   cursor: pointer;
-  border: black solid 1px;
+  border-color: black;
+  border-width: 1px;
 }
-body #main #tabs #tab-1-content {
+body #main #tabs-body {
   background-color: #a679d2;
   width: 100%;
-  height: 95%;
-}
-body #main #tabs #tab2-content {
-  background-color: #663399;
+  height: 92%;
 }
 body #main #tabs .hidden {
   display: none;

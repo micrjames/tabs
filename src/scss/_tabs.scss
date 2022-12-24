@@ -2,16 +2,17 @@
    #tabs-hdr-btn-group {
        .btn {                                                                                   
            border-radius: 0;
-           background-color: lighten($bg-color, 10%);
+		   background-color: lighten($bg-color, 25%);
                       
            &:disabled {
-               background-color: lighten($bg-color, 25%);
+			   background-color: lighten($bg-color, 10%);
                cursor: default;
            }  
        }   
        &-btn {
            @include button(1.5rem, 0.9rem 1.2rem, 0);
-           border: black solid 1px;
+		   border-color: black;
+		   border-width: 1px;
        }   
    } 
 }

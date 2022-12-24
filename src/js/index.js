@@ -1,15 +1,7 @@
 import { tabsHdr, tabsBody, contents } from "./incs.js";
-import { createBtn, createBtnGroup } from "./DOMutils.js";
+import Tabs from "./Tabs.js";
 
-let btns = [];
-for(let btnIndex = 1; btnIndex <= contents.length; btnIndex++) {
-   const btn = createBtn("tabs-hdr-btn-group-btn", "btn");
-   btn.textContent = contents[btnIndex-1].text;
-   btn.disabled = contents[btnIndex-1].disabled;
-   btn.style.width = `${100/contents.length}%`;
+const tabs = new Tabs(contents);
+tabs.setStyle();
 
-   btns = [...btns, btn];
-}
-
-const tabsHdrBtnGroup = createBtnGroup("tabs-hdr-btn-group", btns);
-tabsHdr.appendChild(tabsHdrBtnGroup);
+tabsHdr.appendChild(tabs.tabsGroup);
