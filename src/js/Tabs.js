@@ -5,18 +5,25 @@ class Tabs {
     #tabs = [];
     #tabs_group;
 
-    constructor(properties) {
+    constructor(properties, outlet) {
 	    for(let tabIndex = 1; tabIndex <= properties.length; tabIndex++) {                              
 		   const _this = this;
 		   const tab = new Tab("tabs-hdr-btn-group-btn", "btn", function() {
 			   for(const tab of _this.#tabs) {
-				   if(tab == this)
+				   if(tab == this) {
 				       tab.classList.add("enabled");
-				   else tab.classList.remove("enabled");
+					   outlet.textContent = properties[tabIndex-1].content;
+				   }
+				   else {
+					  tab.classList.remove("enabled");
+				   }
 			   }
 		   });
 		   tab.text = properties[tabIndex-1].text;
-		   if(properties[tabIndex-1].enabled) tab.tab.classList.add("enabled");
+		   if(properties[tabIndex-1].enabled) {
+			  tab.tab.classList.add("enabled");
+			  outlet.textContent = properties[tabIndex-1].content;
+		   }
 		   tab.width = `${100/properties.length}%`;
       
 	       this.#tabs = [...this.#tabs, tab.tab];
