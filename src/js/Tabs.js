@@ -6,10 +6,20 @@ class Tabs {
     #tabs_group;
 
     constructor(properties) {
-	    for(let tabIndex = 1; tabIndex <= properties.length; tabIndex++) {                                
-		   const tab = new Tab("tabs-hdr-btn-group-btn", "btn");
+	    for(let tabIndex = 1; tabIndex <= properties.length; tabIndex++) {                              
+		   const _this = this;
+		   const tab = new Tab("tabs-hdr-btn-group-btn", "btn", function() {
+			   for(const tab of _this.#tabs) {
+				  /*
+				   if(tab == this)
+				       tab.classList.add("enabled");
+				   else tab.classList.remove("enabled");
+				   */
+				  tab.classList.toggle("enabled");
+			   }
+		   });
 		   tab.text = properties[tabIndex-1].text;
-		   tab.disabled = properties[tabIndex-1].disabled;
+		   if(properties[tabIndex-1].enabled) tab.tab.classList.add("enabled");
 		   tab.width = `${100/properties.length}%`;
       
 	       this.#tabs = [...this.#tabs, tab.tab];
@@ -27,7 +37,7 @@ class Tabs {
 
     setStyle() {
 	    for(const tab of this.#tabs) {
-		    if(tab.disabled) {
+		    if(!tab.classList.contains("enabled")) {
 			   tab.style.borderTopStyle = "solid";
 			   tab.style.borderRightStyle = "solid";
 			   tab.style.borderLeftStyle = "solid";

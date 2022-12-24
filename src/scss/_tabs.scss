@@ -2,11 +2,10 @@
    #tabs-hdr-btn-group {
        .btn {                                                                                   
            border-radius: 0;
-		   background-color: lighten($bg-color, 25%);
+		   background-color: lighten($bg-color, 10%);
                       
-           &:disabled {
-			   background-color: lighten($bg-color, 10%);
-               cursor: default;
+           &.enabled {
+			   background-color: lighten($bg-color, 25%);
            }  
        }   
        &-btn {

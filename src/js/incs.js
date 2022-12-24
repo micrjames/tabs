@@ -6,11 +6,11 @@ const tabsHdr = tabs.children.namedItem("tabs-hdr");
 
 const tabsBody = tabs.children.namedItem("tabs-body");
 const contents = [
-    {"text": "Tab 1", "disabled": false},
-    {"text": "Tab 2", "disabled": true},
-    {"text": "Tab 3", "disabled": true},
-    {"text": "Tab 4", "disabled": true},                                                                
-    {"text": "Tab 5", "disabled": true}
+    {"text": "Tab 1", "enabled": true},
+    {"text": "Tab 2", "enabled": false},
+    {"text": "Tab 3", "enabled": false},
+    {"text": "Tab 4", "enabled": false},                                                                
+    {"text": "Tab 5", "enabled": false}
 ]; 
 
 export { tabsHdr, tabsBody, contents };

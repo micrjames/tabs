@@ -3,19 +3,13 @@ import { createBtn } from "./DOMutils.js";
 class Tab {
     #tab;
 
-    constructor(idName, className) {
+    constructor(idName, className, cb) {
 		this.#tab = createBtn(idName, className);
+	    this.#tab.addEventListener("click", cb);
 	}
 
     set text(value) {
 	    this.#tab.textContent = value;
-	}
-
-    set disabled(value) {
-	    this.#tab.disabled = value;
-	}
-    get disabled() {
-	    return this.#tab.disabled;
 	}
 
     set width(value) {
