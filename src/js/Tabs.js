@@ -12,10 +12,14 @@ class Tabs {
 			   for(const tab of _this.#tabs) {
 				   if(tab == this) {
 				       tab.classList.add("enabled");
+					   tab.style.zIndex = 100;
+					   tab.style.width = "35%";
+					   tab.style.height = "100%";
 					   outlet.textContent = properties[tabIndex-1].content;
 				   }
 				   else {
 					  tab.classList.remove("enabled");
+					  tab.style.width = `${65/(properties.length-1)}%`;
 				   }
 			   }
 		   });
@@ -24,7 +28,8 @@ class Tabs {
 			  tab.tab.classList.add("enabled");
 			  outlet.textContent = properties[tabIndex-1].content;
 		   }
-		   tab.width = `${100/properties.length}%`;
+		   if(tab.tab.classList.contains("enabled")) tab.width = "35%";
+		   else tab.width = `${65/(properties.length-1)}%`;
       
 	       this.#tabs = [...this.#tabs, tab.tab];
 	    }

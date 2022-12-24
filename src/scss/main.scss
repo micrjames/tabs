@@ -19,6 +19,7 @@ body {
 			 width: 50%;
 		  }
 		  &-hdr {
+			white-space:nowrap;
 			@include tabs($primary-color); 
 		  }
 		  &-body {
